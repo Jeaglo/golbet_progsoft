@@ -20,7 +20,8 @@ public class TeamsController : Controller
     public IActionResult Create() => View(new TeamFormDto());
 
     // POST /Teams/Create
-    [HttpPost, ValidateAntiForgeryToken]
+    [HttpPost] 
+    [ValidateAntiForgeryToken]
     public async Task<IActionResult> Create(TeamFormDto dto)
     {
         if (!ModelState.IsValid) return View(dto);
