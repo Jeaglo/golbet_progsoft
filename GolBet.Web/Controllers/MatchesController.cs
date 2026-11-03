@@ -30,7 +30,7 @@ public class MatchesController : Controller
     }
 
     // GET /Matches/Detail/3
-    public async Task<IActionResult> Detail(int id)
+    public async Task<IActionResult> Detail(int id) 
     {
         var match = await _matchService.GetDetailAsync(id);
         if (match is null) return NotFound();   // HTTP 404
